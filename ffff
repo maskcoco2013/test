@@ -405,19 +405,15 @@
 				<td onclick="document.getElementById('MISTER_RF_GMD_MYTEMPO').checked = true;" style="width: 25%; position: relative; top: 0;">
 					                <strong style="color: Orange;">Mister journalisme</strong><br />                <img src="https://i.ibb.co/d57cFrp/olivier-31bis.png" /><br />                <input id="MISTER_RF_GMD_MYTEMPO" value="GMD_MYTEMPO" name="candidat_MISTER_RF" type="radio" />                <label for="MISTER_RF_GMD_MYTEMPO"><a target="_blank" href="https://www.habbo.fr/home/GMD_MYTEMPO"><strong> GMD_MYTEMPO</strong></a></label><br />              
 				</td>
-				                             
-				<td onclick="document.getElementById('MISTER_RF_Thanck.').checked = true;" style="width: 25%; position: relative; top: 0;">
-					                <strong style="color: RebeccaPurple;">Mister Gouvernement</strong><br />                <img src="https://i.ibb.co/jDXdSvG/Dark-CO.png" /><br />                <input id="MISTER_RF_Thanck." value="Thanck." name="candidat_MISTER_RF" type="radio" />                <label for="MISTER_RF_Thanck."><a target="_blank" href="https://www.habbo.fr/home/Thanck."><strong> Thanck.</strong></a></label><br />              
-				</td>
-				            
+				                            			            
 			</tr><tbody>                     </tbody>
 		</table><fieldset data-onglet="onglet2" class="onglet"><br /><br /></fieldset>
 		<table style="table-layout: auto; width: 100%; text-align: center;">
 			                         <tbody></tbody>
 			<tr style="">
 				              
-				<td onclick="document.getElementById('MISTER_RF_sophiane59510').checked = true;" style="width: 25%; position: relative; top: 0;">
-					                <strong style="color: Red;">Mister Gouvernement</strong><br />                <img src="https://i.ibb.co/q7YhBrH/sophiane59510.png" /><br />                <input id="MISTER_RF_sophiane59510" value="sophiane59510" name="candidat_MISTER_RF" type="radio" />                <label for="MISTER_RF_sophiane59510"><a target="_blank" href="https://www.habbo.fr/home/sophiane59510"><strong> sophiane59510</strong></a></label><br />              
+				<td onclick="document.getElementById('MISTER_RF_Thanck.').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: Red;">Mister Gouvernement</strong><br />                <img src="https://i.ibb.co/jDXdSvG/Dark-CO.png" /><br />                <input id="MISTER_RF_Thanck." value="Thanck." name="candidat_MISTER_RF" type="radio" />                <label for="MISTER_RF_Thanck."><a target="_blank" href="https://www.habbo.fr/home/Thanck."><strong> Thanck.</strong></a></label><br />              
 				</td>
 				            
 			</tr><tbody>                       </tbody>
