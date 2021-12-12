@@ -335,7 +335,7 @@
 				</td>
 				                             
 				<td onclick="document.getElementById('MISS_RF_maelys596').checked = true;" style="width: 25%; position: relative; top: 0;">
-					                <strong style="color: MediumAquamarine;">Miss centre hospitalier universitaire</strong><br />                <img src="https://zupimages.net/up/21/49/8j71.png" /><br />                <input id="MISS_RF_maelys596" value="maelys596" name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_maelys596"><a target="_blank" href="https://www.habbo.fr/home/maelys596"><strong> maelys596</strong></a></label><br />              
+					                <strong style="color: Pink;">Miss centre hospitalier universitaire</strong><br />                <img src="https://zupimages.net/up/21/49/8j71.png" /><br />                <input id="MISS_RF_maelys596" value="maelys596" name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_maelys596"><a target="_blank" href="https://www.habbo.fr/home/maelys596"><strong> maelys596</strong></a></label><br />              
 				</td>
 				            
 			</tr><tbody>                       </tbody>
@@ -349,11 +349,11 @@
 				</td>
 				                             
 				<td onclick="document.getElementById('MISS_RF_Sorinebest').checked = true;" style="width: 25%; position: relative; top: 0;">
-					                <strong style="color: Orange;">Miss animation</strong><br />                <img src="https://zupimages.net/up/21/49/6nvj.png" /><br />                <input id="MISS_RF_Sorinebest" value="Sorinebest" name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_Sorinebest"><a target="_blank" href="https://www.habbo.fr/home/Sorinebest"><strong> Sorinebest</strong></a></label><br />              
+					                <strong style="color: MediumAquamarine;">Miss animation</strong><br />                <img src="https://zupimages.net/up/21/49/6nvj.png" /><br />                <input id="MISS_RF_Sorinebest" value="Sorinebest" name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_Sorinebest"><a target="_blank" href="https://www.habbo.fr/home/Sorinebest"><strong> Sorinebest</strong></a></label><br />              
 				</td>
 
 				<td onclick="document.getElementById('MISS_RF_julie10902').checked = true;" style="width: 25%; position: relative; top: 0;">
-					                <strong style="color: Orange;">Miss service technique</strong><br />                <img src="https://zupimages.net/up/21/49/ur3h.png" /><br />                <input id="MISS_RF_Sorinebest" value="julie10902" name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_julie10902"><a target="_blank" href="https://www.habbo.fr/home/julie10902"><strong> julie10902</strong></a></label><br />              
+					                <strong style="color: RebeccaPurple;">Miss service technique</strong><br />                <img src="https://zupimages.net/up/21/49/ur3h.png" /><br />                <input id="MISS_RF_Sorinebest" value="julie10902" name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_julie10902"><a target="_blank" href="https://www.habbo.fr/home/julie10902"><strong> julie10902</strong></a></label><br />              
 				</td>
 				                                                         		                             
 				<td onclick="document.getElementById('MISS_RF_Piingouin.').checked = true;" style="width: 25%; position: relative; top: 0;">
