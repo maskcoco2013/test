@@ -1,0 +1,509 @@
+<!--  Formulaire de concours : Miss & Mister RF - FINALE
+
+@author theo4545 (code original)
+@author Masterkamilo (adaptation)
+@version 1.0 - Forum principal
+@copyright (c) 2020 République française de Habbo  --> <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500" rel="stylesheet" /> <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" /><link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css" /><script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet" /> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <style>
+    .panel::placeholder,
+    .panel::-webkit-input-placeholder,
+    .panel:-moz-placeholder,
+    .panel:-ms-input-placeholder,
+    .panel::-ms-input-placeholder {
+        color: #aaa;
+    }
+
+    .panel input:invalid, .panel input:focus,
+    .panel select:invalid, .panel select:focus,
+    .panel textarea:invalid, .panel textarea:focus {
+        box-shadow: none;
+        border: 0 none;
+        outline: 0;
+    }
+
+    table {
+        border-collapse: separate;
+        border-spacing: 1px;
+    }
+
+    .alert {
+        padding: 10px 15px;
+        margin: 20px 0;
+    }
+
+    fieldset#onglet0 p {
+        margin: 5px 0 10px;
+    }
+
+    .panel-heading {
+        background-color: #e7b41e !important;
+        background-image: -webkit-linear-gradient(top, #e7b41e 0, #8f6b18 100%) !important;
+        background-image: linear-gradient(to bottom, #e7b41e 0, #8f6b18 100%) !important;
+        background-repeat: repeat-x;
+        color: white !important;
+    }
+
+    .panel-title {
+        text-align: center;
+    }
+
+    .panel-body {
+        padding: 25px;
+        font: normal 300 14px/25px "Roboto", sans-serif;
+        color: #888;
+        text-align: center;
+    }
+
+    .progress-bar {
+        background: #e7b41e;
+    }
+
+    .form-steps {
+        margin: auto;
+        margin-top: 20px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .barre_progression {
+        position: absolute;
+        top: 24px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #ddd;
+    }
+
+    .form-step {
+        position: relative;
+        float: left;
+        width: 50%;
+        padding: 0 5px;
+    }
+
+    .form-step p {
+        margin: 5px 0 10px;
+    }
+
+    .form-step-icon i {
+        margin-top: 12px;
+    }
+
+    .form-step-icon {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-top: 4px;
+        background-color: #ddd;
+        border-radius: 50%;
+        font: normal 600 16px/48px "Roboto", FontAwesome;
+        color: #fff;
+        text-align: center;
+    }
+
+    .form-step.active .form-step-icon {
+        margin-top: 0;
+        width: 48px;
+        height: 48px;
+        background-color: #e7b41e;
+        font: normal 600 22px/48px "Roboto", FontAwesome;
+    }
+
+    .form-step.active .form-step-icon .fa {
+        font-weight: 600;
+    }
+
+    .form-step.check .form-step-icon {
+        background-color: #fff;
+        border: 1px solid #e7b41e;
+        color: #e7b41e;
+        line-height: 38px;
+    }
+
+    .alert {
+        text-align: left;
+    }
+
+    .alert hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    fieldset {
+        margin-top: 20px;
+        display: none;
+        text-align: left;
+    }
+
+    fieldset.active {
+        display: block;
+    }
+
+    fieldset .alert {
+        margin-top: 60px;
+    }
+
+    h4.step {
+        margin-bottom: 20px;
+        width: 100%;
+        float: left;
+        font: normal 300 20px/26px "Roboto";
+        color: #e7b41e;
+    }
+
+    h4.step span {
+        float: right;
+        font: normal 300 18px/26px "Roboto";
+        color: #555;
+    }
+
+    label {
+        font-weight: 300;
+    }
+
+    label span {
+        color: #e7b41e;
+    }
+
+    label img {
+        cursor: pointer;
+        margin-left: 5px;
+    }
+
+    .form-control:-moz-placeholder {
+        color: #aaa;
+    }
+
+    .form-control:-ms-input-placeholder {
+        color: #aaa;
+    }
+
+    .form-control::-webkit-input-placeholder {
+        color: #aaa;
+    }
+
+    .form-control {
+        margin: 0;
+        height: 44px;
+        border: 1px solid #ddd;
+        border-radius: 0px;
+        background: #eee none repeat scroll 0 0;
+        box-shadow: none;
+        font: normal 300 16px/24px "Roboto", FontAwesome;
+        color: #333;
+    }
+
+    .form-control:focus {
+        outline: 0;
+        background: #f1f1f1 none repeat scroll 0 0;
+        border: 1px solid #eee;
+        box-shadow: none;
+    }
+
+    select {
+        font-family: "Roboto", sans-serif;
+    }
+
+    select option {
+        color: #333;
+    }
+
+    select:invalid {
+        color: #aaa;
+    }
+
+    .align-right {
+        text-align: right;
+    }
+
+    .btn {
+        margin: 20px 5px;
+        padding: 0 20px;
+        min-width: 105px;
+        height: 40px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        box-shadow: none;
+        text-shadow: none;
+        font: normal 300 16px/40px "Roboto", sans-serif;
+        color: #fff;
+    }
+
+    .btn.btn-suivant,
+    .btn.btn-suivant:hover,
+    .btn.btn-suivant:active {
+        background-color: #e7b41e;
+        color: white;
+    }
+
+    .btn.btn-envoyer,
+    .btn.btn-envoyer:hover,
+    .btn.btn-envoyer:active,
+    .btn.btn-envoyer:focus {
+        background-color: #e7b41e;
+        color: white;
+    }
+
+    .btn.btn-retour,
+    .btn.btn-retour:hover,
+    .btn.btn-retour:active {
+        background-color: #bbb;
+        color: white;
+    }
+</style>
+<div class="panel panel-default">
+	     
+	<div class="panel-heading">
+		         
+		<h3 class="panel-title">
+			<em class="fas fa-trophy">
+			</em> Formulaire de vote - Miss & Mister RF - FINALE
+		</h3>
+		     
+	</div>
+	     
+	<div class="panel-body">
+		         
+		<div class="form-steps">
+			             
+			<div class="progress barre_progression">
+				                
+				<div style="width: 0%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" role="progressbar" class="progress-bar">
+				</div>
+				            
+			</div>
+			             
+			<div id="step1" class="form-step">
+				                
+				<div class="form-step-icon">
+					<em class="fas fa-person-booth" aria-hidden="true">
+					</em>
+				</div>
+				                
+				<p>
+					Bureau de vote
+				</p>
+				            
+			</div>
+			             
+			<div id="step2" class="form-step">
+				                
+				<div class="form-step-icon">
+					<em class="fas fa-vote-yea" aria-hidden="true">
+					</em>
+				</div>
+				                
+				<p>
+					Envoi du vote
+				</p>
+				            
+			</div>
+			         
+		</div>
+		         <noscript>            <div class="alert alert-danger" role="alert">                 <h4 class="alert-heading"><i class="fas fa-exclamation-circle"></i> JavaScript est désactivé !</h4>                 <p>Oops, votre navigateur ne semble pas supporter les scripts, ou refuse de les exécuter sur cette page web...</p>             </div>         </noscript>         
+		<p id="erreur-remplissage">
+		</p>
+		         <fieldset data-onglet="onglet0" class="onglet active">             </fieldset>
+		<h4 style="" class="step">
+			Formulaire de vote - Miss & Mister RF - FINALE :<span>Étape 0 - 3</span>
+		</h4><fieldset data-onglet="onglet0" class="onglet active">             </fieldset>
+		<p style="">
+			Bienvenue sur le formulaire de vote du concours de Miss & Mister RF, édition 2021 !
+		</p><fieldset data-onglet="onglet0" class="onglet active">             </fieldset>
+		<p style="margin-top: 15px;">
+			<span style="text-decoration: underline;">Voici quelques informations importantes :</span><br />            - Le bureau de vote est ouvert jusqu'au dimanche 29 novembre 2020 à 20h00.<br />            - Il faut être titulaire des droits de citoyenneté R.F pour pouvoir voter (<a target="_blank" href="https://www.republiqueforum.fr/t12355-devenir-citoyen-demarche">pour plus d'informations cliquer ici</a>) !<br />            - Vous pouvez à tout moment changer votre bulletin de vote. Seul le dernier bulletin envoyé sera pris en compte.
+		</p><fieldset data-onglet="onglet0" class="onglet active">             </fieldset>
+		<div style="" class="align-right">
+			                <script>document.write('<button class="btn btn-suivant" id="btn-next-1" data-redirection="onglet1" disabled>Vérification de la citoyenneté...</button>')</script>            
+		</div><fieldset data-onglet="onglet0" class="onglet active">         </fieldset>         <fieldset data-onglet="onglet1" class="onglet">           </fieldset>
+		<h4 style="" class="step">
+			Bureau de vote - Miss RF :<span>Étape 1 - 3</span>
+		</h4><fieldset data-onglet="onglet1" class="onglet"><br /><br />                     </fieldset>
+		<table style="table-layout: auto; width: 100%; text-align: center;">
+			                         <tbody></tbody>
+			<tr style="">
+				              
+				<td onclick="document.getElementById('MISS_RF_denise38').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: ForestGreen;">Miss centre militaire</strong><br />                <img src="https://i.ibb.co/2F1WFkv/assia944.png" /><br />                <input id="MISS_RF_assia944" value="denise38" name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_denise38"><a target="_blank" href="https://www.habbo.fr/home/denise38"><strong> denise38</strong></a></label><br />              
+				</td>
+				                             
+				<td onclick="document.getElementById('MISS_RF_.Libellule').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: MediumBlue;">Miss police nationale</strong><br />                <img src="https://i.ibb.co/dkWwG3T/Alix-du-51.png" /><br />                <input id="MISS_RF_.Libellule" value=".Libellule" name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_.Libellule"><a target="_blank" href="https://www.habbo.fr/home/.Libellule"><strong> .Libellule</strong></a></label><br />              
+				</td>
+				                             
+				<td onclick="document.getElementById('MISS_RF_-Passion..').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: DeepSkyBlue;">Miss gendarmerie nationale</strong><br />                <img src="https://i.ibb.co/GW3bTc6/Passion.png" /><br />                <input id="MISS_RF_-Passion.." value="-Passion.." name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_-Passion.."><a target="_blank" href="https://www.habbo.fr/home/-Passion.."><strong> -Passion..</strong></a></label><br />              
+				</td>
+				                             
+				<td onclick="document.getElementById('MISS_RF_maelys596').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: MediumAquamarine;">Miss centre hospitalier universitaire</strong><br />                <img src="https://i.ibb.co/dcTsvXk/sorinebest.png" /><br />                <input id="MISS_RF_maelys596" value="maelys596" name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_maelys596"><a target="_blank" href="https://www.habbo.fr/home/maelys596"><strong> maelys596</strong></a></label><br />              
+				</td>
+				            
+			</tr><tbody>                       </tbody>
+		</table><fieldset data-onglet="onglet1" class="onglet"><br /><br /></fieldset>
+		<table style="table-layout: auto; width: 100%; text-align: center;">
+			                         <tbody></tbody>
+			<tr style="">
+				              
+				<td onclick="document.getElementById('MISS_RF_:Marie::').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: LightSlateGray;">Miss agent spécial</strong><br />                <img src="https://i.ibb.co/L9RGcPk/aziama.png" /><br />                <input id="MISS_RF_:Marie::" value="Aziama" name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_:Marie::"><a target="_blank" href="https://www.habbo.fr/home/:Marie::"><strong> :Marie::</strong></a></label><br />              
+				</td>
+				                             
+				<td onclick="document.getElementById('MISS_RF_Sorinebest').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: Orange;">Miss animation</strong><br />                <img src="https://i.ibb.co/jhGDpSS/arianne2002.png" /><br />                <input id="MISS_RF_Sorinebest" value="Sorinebest" name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_Sorinebest"><a target="_blank" href="https://www.habbo.fr/home/Sorinebest"><strong> Sorinebest</strong></a></label><br />              
+				</td>
+
+				<td onclick="document.getElementById('MISS_RF_julie10902').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: Orange;">Miss service technique</strong><br />                <img src="https://i.ibb.co/jhGDpSS/arianne2002.png" /><br />                <input id="MISS_RF_Sorinebest" value="julie10902" name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_julie10902"><a target="_blank" href="https://www.habbo.fr/home/julie10902"><strong> julie10902</strong></a></label><br />              
+				</td>
+				                                                         		                             
+				<td onclick="document.getElementById('MISS_RF_Piingouin.').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: Red;">Miss Gouvernement</strong><br />                <img src="https://i.ibb.co/k1xXwKV/piingouin.png" /><br />                <input id="MISS_RF_Piingouin." value="Piingouin." name="candidat_MISS_RF" type="radio" />                <label for="MISS_RF_Piingouin."><a target="_blank" href="https://www.habbo.fr/home/Piingouin."><strong> Piingouin.</strong></a></label><br />              
+				</td>
+				            
+			</tr><tbody>                     </tbody>
+		</table><fieldset data-onglet="onglet1" class="onglet">                     </fieldset>
+		<div style="" class="align-right">
+			            <script>document.write('<button class="btn btn-retour" id="btn-retour-0" data-redirection="onglet0" onclick="page_suivante(this);">Précédent</button><button class="btn btn-suivant" id="btn-next-2" data-redirection="onglet2" onclick="page_suivante(this);">Suivant</button>')</script>          
+		</div><fieldset data-onglet="onglet1" class="onglet">                   </fieldset>         <fieldset data-onglet="onglet2" class="onglet">                     </fieldset>
+		<h4 style="" class="step">
+			Bureau de vote - Mister RF :<span>Étape 2 - 3</span>
+		</h4><fieldset data-onglet="onglet2" class="onglet"><br /><br />                     </fieldset>
+		<table style="table-layout: auto; width: 100%; text-align: center;">
+			                         <tbody></tbody>
+			<tr style="">
+				              
+				<td onclick="document.getElementById('MISTER_RF_Mooll00w01').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: ForestGreen;">Mister centre militaire</strong><br />                <img src="https://i.ibb.co/W2JBgyV/douillard50.png" /><br />                <input id="MISTER_RF_Mooll00w01" value="Mooll00w01" name="candidat_MISTER_RF" type="radio" />                <label for="MISTER_RF_Mooll00w01"><a target="_blank" href="https://www.habbo.fr/home/Mooll00w01"><strong> Mooll00w01</strong></a></label><br />              
+				</td>
+				                             
+				<td onclick="document.getElementById('MISTER_RF_Mr.Demonside').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: MediumBlue;">Mister police nationale</strong><br />                <img src="https://i.ibb.co/8dGKJr4/Sami75-19.png" /><br />                <input id="MISTER_RF_Mr.Demonside" value="Mr.Demonside" name="candidat_MISTER_RF" type="radio" />                <label for="MISTER_RF_Mr.Demonside"><a target="_blank" href="https://www.habbo.fr/home/Mr.Demonside"><strong> Mr.Demonside</strong></a></label><br />              
+				</td>
+				                             
+				<td onclick="document.getElementById('MISTER_RF___Kirua__').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: DeepSkyBlue;">Mister gendarmerie nationale</strong><br />                <img src="https://i.ibb.co/m6SJ4jL/warkyz.png" /><br />                <input id="MISTER_RF___Kirua__" value="__Kirua__" name="candidat_MISTER_RF" type="radio" />                <label for="MISTER_RF___Kirua__"><a target="_blank" href="https://www.habbo.fr/home/__Kirua__"><strong> __Kirua__</strong></a></label><br />              
+				</td>
+				                             
+				<td onclick="document.getElementById('MISTER_RF_brandon1030fun').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: MediumAquamarine;">Mister animation</strong><br />                <img src="https://i.ibb.co/Cmqs0MH/Mac-Dam.png" /><br />                <input id="MISTER_RF_brandon1030fun" value="brandon1030fun" name="candidat_MISTER_RF" type="radio" />                <label for="MISTER_RF_brandon1030fun"><a target="_blank" href="https://www.habbo.fr/home/brandon1030fun"><strong> brandon1030fun</strong></a></label><br />              
+				</td>
+				            
+			</tr><tbody>                       </tbody>
+		</table><fieldset data-onglet="onglet2" class="onglet"><br /><br /></fieldset>
+		<table style="table-layout: auto; width: 100%; text-align: center;">
+			                         <tbody></tbody>
+			<tr style="">
+				              
+				<td onclick="document.getElementById('MISTER_RF_JokertT-').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: Gold;">Mister restaurant</strong><br />                <img src="https://i.ibb.co/tzqJcpv/GMD-MYTEMPO.png" /><br />                <input id="MISTER_RF_JokertT-" value="JokertT-" name="candidat_MISTER_RF" type="radio" />                <label for="MISTER_RF_JokertT-"><a target="_blank" href="https://www.habbo.fr/home/JokertT-"><strong> JokertT-</strong></a></label><br />              
+				</td>
+				                           
+				<td onclick="document.getElementById('MISTER_RF_superpupuce59').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: LightSlateGray;">Mister agent spécial</strong><br />                <img src="https://i.ibb.co/7tdX4Gf/sabridu69500.png" /><br />                <input id="MISTER_RF_superpupuce59" value="superpupuce59" name="candidat_MISTER_RF" type="radio" />                <label for="MISTER_RF_superpupuce59"><a target="_blank" href="https://www.habbo.fr/home/superpupuce59"><strong> superpupuce59</strong></a></label><br />              
+				</td>
+				                             
+				<td onclick="document.getElementById('MISTER_RF_GMD_MYTEMPO').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: Orange;">Mister journalisme</strong><br />                <img src="https://i.ibb.co/d57cFrp/olivier-31bis.png" /><br />                <input id="MISTER_RF_GMD_MYTEMPO" value="GMD_MYTEMPO" name="candidat_MISTER_RF" type="radio" />                <label for="MISTER_RF_GMD_MYTEMPO"><a target="_blank" href="https://www.habbo.fr/home/GMD_MYTEMPO"><strong> GMD_MYTEMPO</strong></a></label><br />              
+				</td>
+				                             
+				<td onclick="document.getElementById('MISTER_RF_Thanck.').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: RebeccaPurple;">Mister Gouvernement</strong><br />                <img src="https://i.ibb.co/jDXdSvG/Dark-CO.png" /><br />                <input id="MISTER_RF_Thanck." value="Thanck." name="candidat_MISTER_RF" type="radio" />                <label for="MISTER_RF_Thanck."><a target="_blank" href="https://www.habbo.fr/home/Thanck."><strong> Thanck.</strong></a></label><br />              
+				</td>
+				            
+			</tr><tbody>                     </tbody>
+		</table><fieldset data-onglet="onglet2" class="onglet"><br /><br /></fieldset>
+		<table style="table-layout: auto; width: 100%; text-align: center;">
+			                         <tbody></tbody>
+			<tr style="">
+				              
+				<td onclick="document.getElementById('MISTER_RF_sophiane59510').checked = true;" style="width: 25%; position: relative; top: 0;">
+					                <strong style="color: Red;">Mister Gouvernement</strong><br />                <img src="https://i.ibb.co/q7YhBrH/sophiane59510.png" /><br />                <input id="MISTER_RF_sophiane59510" value="sophiane59510" name="candidat_MISTER_RF" type="radio" />                <label for="MISTER_RF_sophiane59510"><a target="_blank" href="https://www.habbo.fr/home/sophiane59510"><strong> sophiane59510</strong></a></label><br />              
+				</td>
+				            
+			</tr><tbody>                       </tbody>
+		</table><fieldset data-onglet="onglet2" class="onglet">                     </fieldset>
+		<div style="" class="align-right">
+			            <script>document.write('<button class="btn btn-retour" id="btn-retour-1" data-redirection="onglet1" onclick="page_suivante(this);">Précédent</button><button class="btn btn-suivant" id="btn-next-3" data-redirection="onglet3" onclick="page_suivante(this);">Envoyer le vote</button>')</script>          
+		</div><fieldset data-onglet="onglet2" class="onglet">                   </fieldset>                 <fieldset data-onglet="onglet3" class="onglet">             </fieldset>
+		<h4 style="" class="step">
+			Confirmation du vote :<span>Étape 3 - 3</span>
+		</h4><fieldset data-onglet="onglet3" class="onglet">             </fieldset>
+		<p style="" id="situation-envoi">
+			                           
+		</p><fieldset data-onglet="onglet3" class="onglet">         </fieldset>     
+	</div>
+	 
+</div>
+ <script type="application/javascript">
+    $("fieldset.onglet.active").show();
+    var iframe_verif_citoyen = document.createElement("iframe");
+    iframe_verif_citoyen.setAttribute("id", "iframe_verif_citoyen");
+    iframe_verif_citoyen.style.display = "none";
+    iframe_verif_citoyen.setAttribute("src", "/post?f=31&mode=newtopic");
+    document.body.appendChild(iframe_verif_citoyen);
+    iframe_verif_citoyen.addEventListener("load", function() {
+      if($("#iframe_verif_citoyen").contents().find("input.post[name=subject]").length == 1) {
+        $("button#btn-next-1").html("Commencer");
+        $("button#btn-next-1").attr("disabled", false);
+        $("button#btn-next-1").attr("onclick", "page_suivante(this);");
+      } else {
+        alert("Vous n'êtes pas titulaire de la citoyenneté RF. Seuls les citoyens peuvent voter !");
+        $("button#btn-next-1").remove();
+      }
+    }, {once: true});
+
+    var txt_form_incomplet = "", msg_title = "", msg_title = "";
+    function page_suivante(localisation) {
+        txt_form_incomplet = "";
+        var redirection = localisation.dataset.redirection;
+        if (redirection == "onglet0") {
+            $(".form-step").removeClass("active");
+            $(".progress-bar").attr("aria-valuenow", "0"); $(".progress-bar").animate({ width: "0%" }, "linear");
+        }
+        if (redirection == "onglet1") {
+            $(".progress-bar").attr("aria-valuenow", "25"); $(".progress-bar").animate({ width: "25%" }, "linear");
+            setTimeout(function () {
+                $(".form-step").removeClass("active");
+                $("#step1").addClass("active");
+            }, 900);
+        }
+        if (redirection == "onglet2") {
+            if ($("input[name=candidat_MISS_RF]:checked").length == 0) { txt_form_incomplet = txt_form_incomplet + "<br /> - Miss RF"; }
+        }
+        if (redirection == "onglet3") {
+            if ($("input[name=candidat_MISTER_RF]:checked").length == 0) { txt_form_incomplet = txt_form_incomplet + "<br /> - Mister RF"; }
+            if (txt_form_incomplet == "") {
+                $(".progress-bar").attr("aria-valuenow", "75");
+                $(".progress-bar").animate({ width: "75%" }, "linear");
+                setTimeout(function () { 
+                    $(".form-step").removeClass("active"); $('#step2').addClass("active"); $("#step1").addClass("check"); 
+                }, 900);
+                
+                msg_title = "[ " + _userdata.username + " ] M&M2021 : Vote pour " + $("input[name=candidat_MISS_RF]:checked").val() + " et " + $("input[name=candidat_MISTER_RF]:checked").val();
+                msg_body = "[size=14]"
+                + "[b][u]Miss RF[/u] :[/b] " + $("input[name=candidat_MISS_RF]:checked").val() + "\n"
+                + "[b][u]Mister RF[/u] :[/b] " + $("input[name=candidat_MISTER_RF]:checked").val()
+                + "[/size]";
+
+                $.post("/post", { mode: "newtopic", post: 1, f: 117, subject: msg_title, message: msg_body }, function (data, status) {
+                    if (status == "success") { 
+                        $("p#situation-envoi").html("<div class=\"alert alert-success\" role=\"alert\"><h4 class=\"alert-heading\"><i class=\"fas fa-check-circle\"></i> Votre bulletin de vote a bien été envoyé ! </h4><p>Merci pour votre participation et à bientôt pour l'annonce des résultats !</p><hr><p class=\"mb-0\">L'équipe d'animation de la République française.</p></div>");
+                    } else {
+                        $("p#situation-envoi").html("<div class=\"alert alert-danger\" role=\"alert\"><h4 class=\"alert-heading\"><i class=\"fas fa-exclamation-circle\"></i> Votre bulletin de vote n'a pas été envoyé ! </h4><p>Oops, votre bulletin de vote n'a pas été envoyé... Vous pouvez recharger la page en <a href=\"Javascript:location.reload();\" class=\"alert-link\">cliquant ici</a>.</p><hr><p class=\"mb-0\">Si le problème persiste, merci de <a href=\"http://www.republiqueforum.fr/h25-demande-de-support\" class=\"alert-link\" target=\"_blank\">contacter le support technique en cliquant ici</a>.</p></div>");
+                    }
+                });
+            }
+        }
+
+        if (txt_form_incomplet != "") {
+            $("p#erreur-remplissage").html('<div class="alert alert-warning" role="alert"><h4 class="alert-heading"><i class="fas fa-exclamation-circle"></i> Erreur de remplissage !</h4><p>Oops, vous n\'avez pas rempli correctement le formulaire ! Merci de bien vouloir voter pour : ' + txt_form_incomplet + ' </p></div>');
+            return false;
+        } else {
+            $("p#erreur-remplissage").html("");
+        }
+        $("fieldset.onglet.active").removeClass("active");
+        $("fieldset.onglet").hide();
+        $('fieldset[data-onglet="' + redirection + '"]').addClass("active");
+        $("fieldset.onglet.active").fadeIn();
+    }
+</script>
